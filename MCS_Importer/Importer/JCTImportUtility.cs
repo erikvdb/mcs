@@ -284,14 +284,14 @@ namespace M3DIMPORT
 				for (int j = 1; j < (n - 6); j++)
 					name += " " + parts [j];
 				names [i] = Unescape (name);
-				//the *.01 converts units from daz to unity meters methinks
-				nodes [i].x = -(float)(System.Convert.ToDouble (parts [n - 6]) * 0.01);
-				nodes [i].y = (float)(System.Convert.ToDouble (parts [n - 5]) * 0.01);
-				nodes [i].z = (float)(System.Convert.ToDouble (parts [n - 4]) * 0.01);
-				offsets [i].x = -(float)(System.Convert.ToDouble (parts [n - 3]) * 0.01);
-				offsets [i].y = (float)(System.Convert.ToDouble (parts [n - 2]) * 0.01);
-				offsets [i].z = (float)(System.Convert.ToDouble (parts [n - 1]) * 0.01);
-			}
+                //the *.01 converts units from daz to unity meters methinks
+                nodes[i].x = -(float)(double.Parse(parts[n - 6], System.Globalization.CultureInfo.InvariantCulture) * 0.01);
+                nodes[i].y = (float)(double.Parse(parts[n - 5], System.Globalization.CultureInfo.InvariantCulture) * 0.01);
+                nodes[i].z = (float)(double.Parse(parts[n - 4], System.Globalization.CultureInfo.InvariantCulture) * 0.01);
+                offsets[i].x = -(float)(double.Parse(parts[n - 3], System.Globalization.CultureInfo.InvariantCulture) * 0.01);
+                offsets[i].y = (float)(double.Parse(parts[n - 2], System.Globalization.CultureInfo.InvariantCulture) * 0.01);
+                offsets[i].z = (float)(double.Parse(parts[n - 1], System.Globalization.CultureInfo.InvariantCulture) * 0.01);
+            }
 		}
 
 		/// <summary>
